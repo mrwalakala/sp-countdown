@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="countdown_text_ended" label="Countdown text ended" language="en" table="x_684094_sp_countd_countdown">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>countdown_text_ended</element>
+            <help/>
+            <hint/>
+            <label>Countdown text ended</label>
+            <language>en</language>
+            <name>x_684094_sp_countd_countdown</name>
+            <plural>Countdown text ended</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>alberto.colombo</sys_created_by>
+            <sys_created_on>2023-03-31 14:42:07</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Countdown text ended</sys_name>
+            <sys_package display_value="SP Countdown" source="x_684094_sp_countd">a071bc922ff52110b7ac58a72799b669</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SP Countdown">a071bc922ff52110b7ac58a72799b669</sys_scope>
+            <sys_update_name>sys_documentation_x_684094_sp_countd_countdown_countdown_text_ended_en</sys_update_name>
+            <sys_updated_by>alberto.colombo</sys_updated_by>
+            <sys_updated_on>2023-03-31 14:42:07</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

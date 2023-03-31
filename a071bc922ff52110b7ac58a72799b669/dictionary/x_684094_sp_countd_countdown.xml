@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="38f17cd22ff52110b7ac58a72799b67b" label="Countdown" max_length="40" name="x_684094_sp_countd_countdown" type="collection">
+        <element label="Countdown text ended" max_length="8000" name="countdown_text_ended" type="html"/>
         <element label="Duration" mandatory="true" max_length="40" name="duration" type="glide_duration"/>
         <element attributes="edge_encryption_enabled=true" display="true" label="Name" mandatory="true" max_length="255" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>

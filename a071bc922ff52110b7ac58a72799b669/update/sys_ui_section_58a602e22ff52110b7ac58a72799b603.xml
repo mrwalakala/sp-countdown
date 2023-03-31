@@ -84,6 +84,20 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>countdown_text_ended</element>
+            <position>6</position>
+            <sys_created_by>alberto.colombo</sys_created_by>
+            <sys_created_on>2023-03-31 14:42:07</sys_created_on>
+            <sys_id>a3af09e7db7de110b365d6c4e2961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_684094_sp_countd_countdown" sys_domain="global" view="Default view">58a602e22ff52110b7ac58a72799b603</sys_ui_section>
+            <sys_updated_by>alberto.colombo</sys_updated_by>
+            <sys_updated_on>2023-03-31 14:42:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
