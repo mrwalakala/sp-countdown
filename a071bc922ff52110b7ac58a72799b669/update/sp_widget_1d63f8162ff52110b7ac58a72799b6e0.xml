@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope) {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller = function ($scope) {
+	var c = this;
 
+	var countdownDuration = $scope.data.countdownDuration || 10;
+	var countdownEndedLabel = $scope.data.countDownEndedLabel || "Time's up!";
 
-
-	var countdownDuration = $scope.data.countdownDuration || 30;
 
 	var timer = new easytimer.Timer();
-	timer.start({countdown: true, startValues: {seconds: countdownDuration}});
+	timer.start({ countdown: true, startValues: { seconds: countdownDuration } });
 
-	$('#countdownExample .values').html(timer.getTimeValues().toString());
+	$('#countdown .values').html(timer.getTimeValues().toString());
 
 	timer.addEventListener('secondsUpdated', function (e) {
-		$('#countdownExample .values').html(timer.getTimeValues().toString());
+		$('#countdown .values').html(timer.getTimeValues().toString());
 	});
 
 	timer.addEventListener('targetAchieved', function (e) {
-		$('#countdownExample .values').html("Time's up!");
+		$('#countdown .values').html(countdownEndedLabel);
 	});
-
-
 
 
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>#countdownExample {
-  font-family: 'Roboto';
-  font-size: 72px;
+        <css>#countdown {&#13;
+  font-family: 'Roboto';&#13;
+  font-size: 144px;&#13;
+  text-align: center;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
-        <description/>
+        <description>Use easytimer.js ( https://github.com/albert-gonzalez/easytimer.js ) to show a countdown, based on the configuration present into the countdown table</description>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
@@ -44,35 +42,36 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	
-	var countdownID = $sp.getParameter('cdid'); 
+        <script><![CDATA[(function () {
+
+	// Find the specific countdown indicated in the parameter cdid
+	var countdownID = $sp.getParameter('cdid');
 	if (countdownID) {
 		var grCountdown = new GlideRecord("x_684094_sp_countd_countdown");
 		if (grCountdown.get(countdownID)) {
 			var countdownDuration = grCountdown.getValue("duration");
 			var gdtCDDuration = new GlideDateTime(countdownDuration);
 			data.countdownDuration = gdtCDDuration.getNumericValue() / 1000;
+			data.countDownEndedLabel = grCountdown.getValue("countdown_text_ended");
 		}
 	}
+	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>alberto.colombo</sys_created_by>
         <sys_created_on>2023-03-27 15:26:08</sys_created_on>
         <sys_id>1d63f8162ff52110b7ac58a72799b6e0</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Countdown widget</sys_name>
         <sys_package display_value="SP Countdown" source="x_684094_sp_countd">a071bc922ff52110b7ac58a72799b669</sys_package>
         <sys_policy/>
         <sys_scope display_value="SP Countdown">a071bc922ff52110b7ac58a72799b669</sys_scope>
         <sys_update_name>sp_widget_1d63f8162ff52110b7ac58a72799b6e0</sys_update_name>
         <sys_updated_by>alberto.colombo</sys_updated_by>
-        <sys_updated_on>2023-03-28 16:13:18</sys_updated_on>
+        <sys_updated_on>2023-03-31 14:57:42</sys_updated_on>
         <template><![CDATA[<div>
-  <div id="countdownExample">
+  <div id="countdown">
       <div class="values"></div>
   </div>
 </div>]]></template>
